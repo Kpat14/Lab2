@@ -1,7 +1,5 @@
 package lab2;
 
-import java.text.DecimalFormat;
-
 /**
  * A random assortment of methods reviewing topics that should improve your
  * programming skills in using Java Control Structures (selection structures,
@@ -77,6 +75,7 @@ public class Utilities {
          */
 
         /* Your implementation here. */
+        assert lowerLimit >= 0 & upperLimit >= 0:"lowerLimit and upperLimit must be non-negative values.";
         int evenSum = 0;
         int oddsum = 0;
         int range = (upperLimit + 1) - lowerLimit;
@@ -147,12 +146,13 @@ public class Utilities {
          * 2. No Scanner operations should appear here (e.g., input.nextInt()).
          *    Instead, refer to the input parameters of this method.
          */
+        /* Your implementation here. */
+        assert seconds >= 0:"seconds must be greater or equal to zero";
         int minutes = seconds/60;
         int remainingSec = seconds%60;
 
         String stringVal = String.format("%d seconds is (%d) minutes and (%d) seconds",seconds,minutes, remainingSec);
         return stringVal;
-        /* Your implementation here. */
     }
 
     /**
@@ -187,10 +187,11 @@ public class Utilities {
          * 2. No Scanner operations should appear here (e.g., input.nextInt()).
          *    Instead, refer to the input parameters of this method.
          */
-        double fraction = (double)numerator/denominator;
-        double result = (Math.pow(fraction,exponent));
-        return result;
         /* Your implementation here. */
+        double fraction = (double)numerator/denominator;
+        double num = (Math.pow(fraction,exponent));
+        double result =Math.round(num*1000000.0)/1000000.0;
+        return result;
 
     }
 
@@ -236,8 +237,8 @@ public class Utilities {
         for (Integer i = 0; i < 5; i++) {
             balance += (balance*(interest/100));
         }
-
-        return balance;
+        double result =Math.round(balance*100.0)/100.0;
+        return result;
         /* Your implementation here. */
     }
 
